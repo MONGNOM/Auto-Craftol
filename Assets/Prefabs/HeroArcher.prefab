@@ -2243,7 +2243,7 @@ GameObject:
   - component: {fileID: 8919676296221202164}
   - component: {fileID: 3100666564065050296}
   m_Layer: 0
-  m_Name: RedArcher
+  m_Name: HeroArcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2259,7 +2259,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2879938451101352059}
@@ -2301,7 +2301,7 @@ Animator:
   m_GameObject: {fileID: 2523834044697671966}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 45f944a4396b0a54398eb1abe6743296, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1d6615e592724564e836d1a9f0071e48, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8a02a1aca5539b141b8aba8d6583ce07, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -7119,37 +7119,37 @@ PrefabInstance:
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.009
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.89610434
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.000000461936
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.44384357
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
@@ -7159,7 +7159,7 @@ PrefabInstance:
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 52.699
       objectReference: {fileID: 0}
     - target: {fileID: 6957463956864073551, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}

@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 7896107333397853088}
   - component: {fileID: 1855750962721445239}
   m_Layer: 0
-  m_Name: KingWarrior
+  m_Name: HeroWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,7 +769,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5282588454879739909}
@@ -811,7 +811,7 @@ Animator:
   m_GameObject: {fileID: 471332290221347229}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 45f944a4396b0a54398eb1abe6743296, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75e79e92e2ff53249a5a6a5689804c22, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 5610452905518962554}
   - component: {fileID: 3737004235154695730}
   m_Layer: 0
-  m_Name: "RedPries\uF746t"
+  m_Name: "Pries\uF746t"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
