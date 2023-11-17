@@ -19,17 +19,12 @@ public class Human : UnitBase
     private void Update()
     {
         if (hp <= 0)
-        {
             Death();
-        }
         else
-        {
             Move();
-        }
     }
     public virtual void DistanceAttack()
     {
-        Debug.Log("11");
         anim.SetBool("Attack",true);
     }
  
