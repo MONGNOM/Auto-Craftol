@@ -18,6 +18,8 @@ public class Human : UnitBase
     }
     private void Update()
     {
+        transform.LookAt(target.transform.position);
+
         if (hp <= 0)
             Death();
         else
@@ -26,6 +28,7 @@ public class Human : UnitBase
     public virtual void DistanceAttack()
     {
         anim.SetBool("Attack",true);
+        
     }
  
     public override void Attack()
@@ -51,6 +54,11 @@ public class Human : UnitBase
         if (other.CompareTag("Monster"))
         {
             Attack();
+        }
+        else if (other.CompareTag("MonsterWeapon"))
+        {
+            Monster monster = other.gameObject.GetComponentInParent<Monster>();
+            hp -= monster.damage;
         }
         
     }
