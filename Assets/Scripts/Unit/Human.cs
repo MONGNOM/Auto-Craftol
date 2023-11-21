@@ -29,7 +29,7 @@ public class Human : UnitBase
     {
         anim.SetBool("Attack",true);
         
-    }
+    }       
  
     public override void Attack()
     {
@@ -39,7 +39,8 @@ public class Human : UnitBase
     public override void Death()
     {
         anim.SetBool("Death", true);
-        agent.isStopped = true;
+        agent.isStopped = true;     
+        Destroy(gameObject);
     }
 
     public override void Move()
