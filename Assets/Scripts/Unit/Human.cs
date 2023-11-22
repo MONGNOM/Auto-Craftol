@@ -10,9 +10,11 @@ public class Human : UnitBase
     private NavMeshAgent agent;
     private Animator anim;
     public GameObject target;
+    public Monster monster;
 
     private void Awake()
     {
+        monster = FindObjectOfType<Monster>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
     }
@@ -39,14 +41,14 @@ public class Human : UnitBase
     public override void Death()
     {
         anim.SetBool("Death", true);
-        agent.isStopped = true;     
+        agent.isStopped = true;
+        monster.targets.Remove(monster.targets[0]);
         Destroy(gameObject);
+        
     }
 
     public override void Move()
     {
-        //find monster;
-        
         agent.SetDestination(target.transform.position);
     }
 

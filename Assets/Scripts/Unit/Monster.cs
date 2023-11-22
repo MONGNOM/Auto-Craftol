@@ -9,8 +9,10 @@ public class Monster : UnitBase
     [Range(0, 1000)] public float damage;
     private NavMeshAgent agent;
     private Animator anim;
-    public Human target;
+    private Human target;
     private BoxCollider box;
+
+    public Human[] humans; // GameManager --> stage clear --> humans[] clear; && Win or Lose
     public List<Human> targets = new List<Human>();
 
     private void Awake()
@@ -22,7 +24,12 @@ public class Monster : UnitBase
 
     private void Start()
     {
-        //for (int i = 0; i <= target. )
+        humans = GameObject.FindObjectsOfType<Human>();
+        for (int i = 0; i < humans.Length; i++) 
+        {
+            targets.Add(target);
+            targets[i] = humans[i];
+        }
     }
     private void Update()
     {
@@ -49,20 +56,20 @@ public class Monster : UnitBase
 
     public override void Move()
     {
-        target = FindObjectOfType<Human>();
-        if (!target)
+        if (targets.Count == 0)
             Idle();
         else
         {
-            transform.LookAt(target.transform.position);
-            agent.SetDestination(target.transform.position);
+            transform.LookAt(targets[0].transform.position);
+            agent.SetDestination(targets[0].transform.position);
             anim.SetBool("Idle", false);
         }
     }
 
     public void Idle()
     {
-        anim.SetBool("Idle", true);  
+        anim.SetBool("Idle", true);
+        humans = null;
     }
 
     private void OnTriggerEnter(Collider other)
