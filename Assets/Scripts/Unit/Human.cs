@@ -58,14 +58,14 @@ public class Human : UnitBase
         {
             Attack();
         }
-       // else if (other.CompareTag("MonsterWeapon"))
-       // {
-       //     Monster monster = other.gameObject.GetComponentInParent<Monster>();
-       //     hp -= monster.damage;
-       // }
-        
-    }
+       else if (other.CompareTag("MonsterWeapon"))
+      {
+          Monster monster = other.gameObject.GetComponentInParent<Monster>();
+          hp -= monster.damage;
+      }
+       
 
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -73,15 +73,5 @@ public class Human : UnitBase
         {
             anim.SetBool("Attack", false);
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //Attack or Take hit
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        
     }
 }
