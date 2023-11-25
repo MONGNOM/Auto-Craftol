@@ -28,7 +28,7 @@ public class Monster : UnitBase
         for (int i = 0; i < humans.Length; i++) 
         {
             targets.Add(target);
-            targets[i] = humans[i];
+            targets[i] = humans[i]; // targets --> human != null but not find?
         }
     }
     private void Update()
@@ -54,8 +54,13 @@ public class Monster : UnitBase
         agent.isStopped = true;
     }
 
-    public override void Move() 
+    public override void Move()
     {
+        humans = GameObject.FindObjectsOfType<Human>();
+        for (int i = 0; i < humans.Length; i++)
+        {
+            targets[i] = humans[i]; // targets --> human != null but not find?
+        }
         if (targets.Count == 0)
             Idle();
         else
