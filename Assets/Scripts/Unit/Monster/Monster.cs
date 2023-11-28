@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Monster : UnitBase
 {
-    [SerializeField, Range(0, 1000000)] private float hp;
-    [Range(0, 1000)] public float damage;
+    [SerializeField, Range(0, 1000000)] private float maxhp;
+    [SerializeField]                    private float curhp;
+    [Range(0, 1000)]                    public float damage;
     private NavMeshAgent agent;
     private Animator anim;
     private Human target;   
     private BoxCollider box;
-
+    public Image hpbar;
     public Human[] humans; // GameManager --> stage clear --> humans[] clear; && Win or Lose
     public List<Human> targets = new List<Human>();
 
@@ -24,7 +26,8 @@ public class Monster : UnitBase
     }
 
     private void Start()
-    {   
+    {
+        curhp = maxhp;
         humans = GameObject.FindObjectsOfType<Human>();
         for (int i = 0; i < humans.Length; i++) 
         {
@@ -34,7 +37,8 @@ public class Monster : UnitBase
     }
     private void Update()
     {
-        if (hp <= 0)
+        hpbar.fillAmount = curhp / maxhp;
+        if (curhp <= 0)
             Death();
         else
             Move();
@@ -91,7 +95,7 @@ public class Monster : UnitBase
         else if (other.CompareTag("PlayerWeapon"))
         {
             Human human = other.gameObject.GetComponentInParent<Human>();
-            hp -= human.damage;
+            curhp -= human.damage;
         }
 
     }
