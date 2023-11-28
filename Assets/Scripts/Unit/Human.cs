@@ -5,25 +5,39 @@ using UnityEngine.AI;
 
 public class Human : UnitBase
 {
-    [SerializeField, Range(0, 1000)] private float hp;
-    [SerializeField, Range(0, 1000)] private float damage;
-    private NavMeshAgent agent;
-    private Animator anim;
-    public GameObject target;
-    public Monster monster;
+    [SerializeField, Range(0, 100000)]  private float hp;
+    [Range(0, 1000000)]                 public float damage;
+    [HideInInspector]                   public  Monster monster;
+                                        private NavMeshAgent agent;
+                                        private BoxCollider box;
+                                        private Animator anim;
+                                        public  Monster[] monsters;
+                                        public  List<Monster> monsterTarget = new List<Monster>();
+    
 
     private void Awake()
     {
         monster = FindObjectOfType<Monster>();
-        agent = GetComponent<NavMeshAgent>();
-        anim = GetComponentInChildren<Animator>();
+        box     = GetComponentInChildren<BoxCollider>();
+        agent   = GetComponent<NavMeshAgent>();
+        anim    = GetComponentInChildren<Animator>();
+    }   
+        
+    private void Start()    
+    {
+        box.enabled = false;
+        monsters    = FindObjectsOfType<Monster>();
+        for (int i = 0; i < monsters.Length; i++)
+        {
+            monsterTarget.Add(monster);
+            monsterTarget[i] = monsters[i];
+        }
     }
     private void Update()
     {
-        transform.LookAt(target.transform.position);
 
         if (hp <= 0)
-            Death();
+            Death();    
         else
             Move();
     }
@@ -49,7 +63,16 @@ public class Human : UnitBase
 
     public override void Move()
     {
-        agent.SetDestination(target.transform.position);
+        if (monster != null)
+        {
+            agent.SetDestination(monster.transform.position);
+            transform.LookAt(monster.transform.position);
+        }
+        else
+        {
+            anim.SetBool("Attack", false);
+            anim.SetBool("Idle", true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,5 +96,15 @@ public class Human : UnitBase
         {
             anim.SetBool("Attack", false);
         }
+    }
+
+    public void OnPlayerWeapon()
+    {
+        box.enabled = true;
+    }
+
+    public void OffPlayerWeapon()
+    {
+        box.enabled = false;
     }
 }

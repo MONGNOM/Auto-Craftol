@@ -1971,6 +1971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5175501257842083781}
   - component: {fileID: 7447180407342967352}
+  - component: {fileID: 1238353254704367856}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -1986,7 +1987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4861515126859860927}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -2023,6 +2024,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1238353254704367856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861515126859860927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb8a13dc2f0d4f7093863989faee69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4883670702732955210
 GameObject:
   m_ObjectHideFlags: 0

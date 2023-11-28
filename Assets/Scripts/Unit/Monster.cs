@@ -5,11 +5,11 @@ using UnityEngine.AI;
 
 public class Monster : UnitBase
 {
-    [SerializeField, Range(0, 1000)] private float hp;
+    [SerializeField, Range(0, 1000000)] private float hp;
     [Range(0, 1000)] public float damage;
     private NavMeshAgent agent;
     private Animator anim;
-    private Human target;
+    private Human target;   
     private BoxCollider box;
 
     public Human[] humans; // GameManager --> stage clear --> humans[] clear; && Win or Lose
@@ -17,13 +17,14 @@ public class Monster : UnitBase
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
-        box = GetComponentInChildren<BoxCollider>();
+        target  = FindObjectOfType<Human>();
+        agent   = GetComponent<NavMeshAgent>();
+        anim    = GetComponent<Animator>();
+        box     = GetComponentInChildren<BoxCollider>();
     }
 
     private void Start()
-    {
+    {   
         humans = GameObject.FindObjectsOfType<Human>();
         for (int i = 0; i < humans.Length; i++) 
         {
@@ -43,15 +44,19 @@ public class Monster : UnitBase
         anim.SetBool("Attack", true);
     }
 
-    public override void Attack()
+    public override void Attack()       
     {
-        DistanceAttack();
+        DistanceAttack();   
     }
 
     public override void Death()
     {
+
         anim.SetBool("Death", true);
         agent.isStopped = true;
+        target.monsterTarget.Remove(target.monsterTarget[0]);
+        anim.SetBool("Attack", false);
+        Destroy(gameObject);
     }
 
     public override void Move()
@@ -82,6 +87,11 @@ public class Monster : UnitBase
         if (other.CompareTag("Player"))
         {
             Attack();
+        }
+        else if (other.CompareTag("PlayerWeapon"))
+        {
+            Human human = other.gameObject.GetComponentInParent<Human>();
+            hp -= human.damage;
         }
 
     }

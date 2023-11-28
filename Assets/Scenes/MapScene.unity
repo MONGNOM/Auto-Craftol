@@ -655,10 +655,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9cb797532b341879fb7f23f3e79f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 200
-  damage: 100
-  target: {fileID: 466407806}
+  hp: 100000
+  damage: 10000
   monster: {fileID: 0}
+  monsters: []
+  monsterTarget: []
 --- !u!4 &149686704
 Transform:
   m_ObjectHideFlags: 0
@@ -2519,7 +2520,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 2
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
@@ -2541,7 +2542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a09232dd10849e0ac2fa42aeb6fe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 10
   damage: 50
   humans: []
   targets: []
@@ -2686,8 +2687,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 200
   damage: 100
-  target: {fileID: 466407806}
   monster: {fileID: 0}
+  monsters: []
+  monsterTarget: []
 --- !u!4 &475227366
 Transform:
   m_ObjectHideFlags: 0
@@ -3863,8 +3865,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 50
   damage: 0
-  target: {fileID: 466407806}
   monster: {fileID: 0}
+  monsters: []
+  monsterTarget: []
 --- !u!195 &749656422
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4091,11 +4094,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
-    - target: {fileID: 4861515126859860927, guid: 3da7626eeca2d4eb3a5744378bb1cb74,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5175501257842083781, guid: 3da7626eeca2d4eb3a5744378bb1cb74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4273,9 +4271,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  damage: 0
-  target: {fileID: 466407806}
+  damage: 1000000
   monster: {fileID: 0}
+  monsters: []
+  monsterTarget: []
 --- !u!195 &885421383
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5589,8 +5588,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 200
   damage: 100
-  target: {fileID: 466407806}
   monster: {fileID: 0}
+  monsters: []
+  monsterTarget: []
 --- !u!4 &1230104759
 Transform:
   m_ObjectHideFlags: 0
@@ -6599,8 +6599,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 50
   damage: 0
-  target: {fileID: 466407806}
   monster: {fileID: 0}
+  monsters: []
+  monsterTarget: []
 --- !u!4 &1644006747
 Transform:
   m_ObjectHideFlags: 0
@@ -44686,9 +44687,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
-  damage: 100
-  target: {fileID: 466407806}
+  damage: 1000
   monster: {fileID: 0}
+  monsters: []
+  monsterTarget: []
 --- !u!136 &8298024530756184288
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -44708,7 +44710,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
