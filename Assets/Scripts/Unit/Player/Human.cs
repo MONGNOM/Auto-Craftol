@@ -1,15 +1,17 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
 
 public class Human : UnitBase
 {
-    [SerializeField, Range(0, 100000)]  private float hp;
-    [Range(0, 1000000)]                 public float damage;
+    [SerializeField, Range(0, 100000)]  private float Maxhp;
+    [Range(0, 1000000)]                 public  float damage;
     [HideInInspector]                   public  Monster monster;
+    /*[HideInInspector]*/               public float curhp;
                                         private NavMeshAgent agent;
-                                        private BoxCollider box;
+                                        private BoxCollider box;    
                                         private Animator anim;
                                         public  Monster[] monsters;
                                         public  List<Monster> monsterTarget = new List<Monster>();
@@ -25,6 +27,7 @@ public class Human : UnitBase
         
     private void Start()    
     {
+        curhp = Maxhp;
         box.enabled = false;
         monsters    = FindObjectsOfType<Monster>();
         for (int i = 0; i < monsters.Length; i++)
@@ -36,7 +39,7 @@ public class Human : UnitBase
     private void Update()
     {
 
-        if (hp <= 0)
+        if (curhp <= 0)
             Death();    
         else
             Move();
@@ -63,6 +66,12 @@ public class Human : UnitBase
 
     public override void Move()
     {
+        monsters = FindObjectsOfType<Monster>();
+        for (int i = 0; i < monsters.Length; i++)
+        {
+            monsterTarget[i] = monsters[i];
+        }
+
         if (monster != null)
         {
             agent.SetDestination(monster.transform.position);
@@ -77,16 +86,18 @@ public class Human : UnitBase
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Monster"))
         {
             Attack();
         }
-       else if (other.CompareTag("MonsterWeapon"))
-      {
-          Monster monster = other.gameObject.GetComponentInParent<Monster>();
-          hp -= monster.damage;
-      }
-       
+        else if (other.CompareTag("MonsterWeapon"))
+        {
+            // Umm hp collider cap and Attackcol ?
+             Monster monster = other.gameObject.GetComponentInParent<Monster>();
+            curhp -= monster.damage;
+        }
+        
 
     }
 

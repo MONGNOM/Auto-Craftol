@@ -57,8 +57,8 @@ public class Monster : UnitBase
     {
 
         anim.SetBool("Death", true);
-        agent.isStopped = true;
         target.monsterTarget.Remove(target.monsterTarget[0]);
+        agent.isStopped = true;
         anim.SetBool("Attack", false);
         Destroy(gameObject);
     }
