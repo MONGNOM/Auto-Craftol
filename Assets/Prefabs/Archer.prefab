@@ -2860,6 +2860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7193531391699560787}
   - component: {fileID: 75427497850214716}
+  - component: {fileID: 6593719117869866270}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -2930,6 +2931,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6593719117869866270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631084872603948265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb8a13dc2f0d4f7093863989faee69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3649777311103602229
 GameObject:
   m_ObjectHideFlags: 0
@@ -7200,6 +7213,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1189297509725497985}
     m_Modifications:
+    - target: {fileID: 113045945130801963, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 26.93561
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239249221388261903, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -83.367485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679462275275790475, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 6.2644194e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679462275275790475, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -6.6839226e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679462275275790475, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.536135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189277740683062077, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 72.86895
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867282666128364633, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 12.872946
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411816124105810112, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 41.557674
+      objectReference: {fileID: 0}
     - target: {fileID: 6957463956863640431, guid: 7076aac120d89da4996ba4b35f82f8f4,
         type: 3}
       propertyPath: m_Name
@@ -7254,6 +7307,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957463956871024813, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919076405392590758, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 27.478018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926974044882071461, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.7978187
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166291725098217199, guid: 7076aac120d89da4996ba4b35f82f8f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -3.682348
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

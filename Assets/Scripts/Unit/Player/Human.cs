@@ -12,7 +12,7 @@ public class Human : UnitBase
     /*[HideInInspector]*/               public float curhp;
                                         private NavMeshAgent agent;
                                         private BoxCollider box;    
-                                        private Animator anim;
+                                        public Animator anim;
                                         public  Monster[] monsters;
                                         public  List<Monster> monsterTarget = new List<Monster>();
     
