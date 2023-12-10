@@ -32,7 +32,7 @@ public class BuffCard : MonoBehaviour
     {
         for (int i = 0; i < listhuman.Count; i++)
         {
-            listhuman[i].curhp += human.curhp *= 0.5f;
+            listhuman[i].curhp += listhuman[i].curhp *= 0.5f;
         }
     }
 
