@@ -4,27 +4,44 @@ using UnityEngine;
 
 public class BuffCard : MonoBehaviour
 {
+    public List<Human> listhuman = new List<Human>();
+    public Human[] humans;
     Human human;
    
- 
+
+    
     private void Start()
     {
         human = FindObjectOfType<Human>();
-
+        humans = FindObjectsOfType<Human>();
+        for (int i = 0; i < humans.Length; i++)
+        {
+            listhuman.Add(human);
+            listhuman[i] = humans[i];
+        }
     }
     public void AttackSpeedUp()
     {
-        human.anim.SetFloat("SalshSpeed", 2);
+        for (int i = 0; i < listhuman.Count; i++)
+        {
+             listhuman[i].anim.SetFloat("SalshSpeed", 2);
+        }
     }
 
     public void Heal()
     {
-        human.curhp += human.curhp *= 0.5f;
+        for (int i = 0; i < listhuman.Count; i++)
+        {
+            listhuman[i].curhp += human.curhp *= 0.5f;
+        }
     }
 
     public void DamageUp()
     {
-        human.damage *= 1.5f;
+        for (int i = 0; i < listhuman.Count; i++)
+        {
+            listhuman[i].damage *= 1.5f;
+        }
     }
 
     
