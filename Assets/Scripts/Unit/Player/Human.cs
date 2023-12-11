@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
 
 public class Human : UnitBase
@@ -15,6 +16,7 @@ public class Human : UnitBase
                                         public Animator anim;
                                         public  Monster[] monsters;
                                         public  List<Monster> monsterTarget = new List<Monster>();
+                                        public Image hpbar;
     
 
     private void Awake()
@@ -38,7 +40,7 @@ public class Human : UnitBase
     }
     private void Update()
     {
-
+        hpbar.fillAmount = curhp / Maxhp;
         if (curhp <= 0)
             Death();    
         else
