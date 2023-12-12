@@ -17,7 +17,20 @@ public class TimeCount : MonoBehaviour
         if (time > 0)
         {
             time -= Time.deltaTime;
+            if (time <= 10)
+            {
+                ColorChange();
+            }
         }
-        text.text = Mathf.Ceil(time).ToString(); 
+        else
+        {
+            Time.timeScale = 0;
+        }
+
+        text.text = string.Format("{0}{1}","Time:",Mathf.Ceil(time).ToString()); 
+    }
+    void ColorChange()
+    {
+            text.color = Color.red;
     }
 }
