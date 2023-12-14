@@ -31,12 +31,18 @@ public class Monster : UnitBase
         humans = GameObject.FindObjectsOfType<Human>();
         for (int i = 0; i < humans.Length; i++) 
         {
-            targets.Add(target);
+            targets.Add(target); 
             targets[i] = humans[i]; // targets --> human != null but not find?
         }
     }
     private void Update()
     {
+        humans = GameObject.FindObjectsOfType<Human>();
+        for (int i = 0; i < humans.Length; i++)
+        {
+            targets[i] = humans[i]; // targets --> human != null but not find?  ==> Add Player Not Find
+        }
+
         hpbar.fillAmount = curhp / maxhp;
         if (curhp <= 0)
             Death();
@@ -65,11 +71,6 @@ public class Monster : UnitBase
 
     public override void Move()
     {
-        humans = GameObject.FindObjectsOfType<Human>();
-        for (int i = 0; i < humans.Length; i++)
-        {
-            targets[i] = humans[i]; // targets --> human != null but not find?
-        }
         if (targets.Count == 0)
             Idle();
         else

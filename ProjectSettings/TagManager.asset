@@ -8,6 +8,7 @@ TagManager:
   - MonsterWeapon
   - PlayerWeapon
   - HealColider
+  - Pos
   layers:
   - Default
   - TransparentFX

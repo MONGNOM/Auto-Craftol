@@ -6,6 +6,8 @@ public class BuffCard : MonoBehaviour
 {
     public List<Human> listhuman = new List<Human>();
     public Human[] humans;
+    [SerializeField] float attackTime;
+    [SerializeField] float damageTime;
     Human human;
    
 
@@ -22,10 +24,7 @@ public class BuffCard : MonoBehaviour
     }
     public void AttackSpeedUp()
     {
-        for (int i = 0; i < listhuman.Count; i++)
-        {
-             listhuman[i].anim.SetFloat("SalshSpeed", 2);
-        }
+        StartCoroutine(SpeedUpTime());
     }
 
     public void Heal()
@@ -38,11 +37,33 @@ public class BuffCard : MonoBehaviour
 
     public void DamageUp()
     {
-        for (int i = 0; i < listhuman.Count; i++)
-        {
-            listhuman[i].damage *= 1.5f;
-        }
+        StartCoroutine(DamageUpTime());
     }
 
-    
+    IEnumerator SpeedUpTime()
+    {
+        for (int i = 0; i < listhuman.Count; i++)
+        {
+            listhuman[i].anim.SetFloat("SalshSpeed", 2);
+        }
+
+        yield return new WaitForSeconds(attackTime);
+        listhuman[listhuman.Count].anim.SetFloat("SalshSpeed", 1);
+        StopCoroutine(SpeedUpTime());
+
+    }
+
+    IEnumerator DamageUpTime()
+    {
+        float[] damage = new float[12];
+        for (int i = 0; i < listhuman.Count; i++)
+        {
+            damage[i] = listhuman[i].damage;
+            listhuman[i].damage *= 1.5f;
+        }
+
+        yield return new WaitForSeconds(damageTime);
+        listhuman[listhuman.Count].damage *= damage[damage.Length]; // not backup?
+        StopCoroutine(DamageUpTime());
+    }
 }
