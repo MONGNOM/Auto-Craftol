@@ -48,22 +48,28 @@ public class BuffCard : MonoBehaviour
         }
 
         yield return new WaitForSeconds(attackTime);
-        listhuman[listhuman.Count].anim.SetFloat("SalshSpeed", 1);
+
+        for (int i = 0; i < listhuman.Count; i++)
+        {
+            listhuman[i].anim.SetFloat("SalshSpeed", 1);
+        }
         StopCoroutine(SpeedUpTime());
 
     }
 
     IEnumerator DamageUpTime()
     {
-        float[] damage = new float[12];
         for (int i = 0; i < listhuman.Count; i++)
         {
-            damage[i] = listhuman[i].damage;
-            listhuman[i].damage *= 1.5f;
+            listhuman[i].damage *= 1.2f;
         }
 
         yield return new WaitForSeconds(damageTime);
-        listhuman[listhuman.Count].damage *= damage[damage.Length]; // not backup?
+
+        for (int i = 0; i < listhuman.Count; i++)
+        {
+            listhuman[i].damage *= 0.85f;
+        }
         StopCoroutine(DamageUpTime());
     }
 }
