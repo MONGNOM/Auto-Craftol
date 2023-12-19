@@ -37,11 +37,6 @@ public class Monster : UnitBase
     }
     private void Update()
     {
-        humans = GameObject.FindObjectsOfType<Human>();
-        for (int i = 0; i < humans.Length; i++)
-        {
-            targets[i] = humans[i]; // targets --> human != null but not find?  ==> Add Player Not Find
-        }
 
         hpbar.fillAmount = curhp / maxhp;
         if (curhp <= 0)
@@ -49,6 +44,8 @@ public class Monster : UnitBase
         else
             Move();
     }
+
+
     public virtual void DistanceAttack()
     {
         anim.SetBool("Attack", true);

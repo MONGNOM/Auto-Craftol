@@ -17,8 +17,8 @@ public class SpawnCard : MonoBehaviour
         int range = Random.Range(0, 11);
         if (playerPos[range].GetComponentInChildren<Human>())
         {
+            Instantiate(warrior, playerPos[range + 1].transform);
             Debug.Log("11");
-            return;
         }
         else
             Instantiate(warrior, playerPos[range].transform);
