@@ -37,6 +37,7 @@ public class Monster : UnitBase
     }
     private void Update()
     {
+        humans = GameObject.FindObjectsOfType<Human>();
 
         hpbar.fillAmount = curhp / maxhp;
         if (curhp <= 0)

@@ -5,35 +5,31 @@ using UnityEngine;
 
 public class SpawnCard : MonoBehaviour
 {
-    public GameObject warrior;
-    public List<GameObject> playerPos = new List<GameObject>(); // 배열로 수정
-    public Transform pos;
+    public bool warrior = false;
+    public bool archer = false;
+    public bool prist = false;
+
+
     
 
   
     public void WarriorSpawn()
     {
-
-        int range = Random.Range(0, 11);
-        if (playerPos[range].GetComponentInChildren<Human>())
-        {
-            Instantiate(warrior, playerPos[range + 1].transform);
-            Debug.Log("11");
-        }
-        else
-            Instantiate(warrior, playerPos[range].transform);
+        warrior = true;
+        archer = false;
+        prist = false;
     }   
 
     public void ArcherSpawn()
     {
-        int range = Random.Range(0, 11);
-        Instantiate(warrior, playerPos[range].transform);
-
+        warrior = false;
+        archer = true;
+        prist = false;
     }
     public void PristSpawn()
     {
-        int range = Random.Range(0, 11);
-        Instantiate(warrior, playerPos[range].transform);
-
+        warrior = false;
+        archer = false;
+        prist = true;
     }
 }
