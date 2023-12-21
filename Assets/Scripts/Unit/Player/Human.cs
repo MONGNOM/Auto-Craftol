@@ -17,6 +17,7 @@ public class Human : UnitBase
                                         public  Monster[] monsters;
                                         public  List<Monster> monsterTarget = new List<Monster>();
                                         public Image hpbar;
+    public float findTime = 0f;
     
 
     private void Awake()
@@ -25,21 +26,24 @@ public class Human : UnitBase
         box     = GetComponentInChildren<BoxCollider>();
         agent   = GetComponent<NavMeshAgent>();
         anim    = GetComponentInChildren<Animator>();
-    }   
-        
+       
+
+    }
+
     private void Start()    
     {
+        monsters = FindObjectsOfType<Monster>();
         curhp = Maxhp;
         box.enabled = false;
-        monsters    = FindObjectsOfType<Monster>();
-        for (int i = 0; i < monsters.Length; i++)
-        {
-            monsterTarget.Add(monster);
-            monsterTarget[i] = monsters[i];
-        }
+        
     }
     private void Update()
     {
+        findTime += Time.deltaTime;
+
+        if (findTime >= 5)
+            FindTarget();
+
         hpbar.fillAmount = curhp / Maxhp;
         if (curhp <= 0)
             Death();    
@@ -61,23 +65,23 @@ public class Human : UnitBase
     {
         anim.SetBool("Death", true);
         agent.isStopped = true;
-        monster.targets.Remove(monster.targets[0]);
         Destroy(gameObject);
         
     }
 
-    public override void Move()
+    public void FindTarget()
     {
         monsters = FindObjectsOfType<Monster>();
-        for (int i = 0; i < monsters.Length; i++)
-        {
-            monsterTarget[i] = monsters[i];
-        }
+        findTime = 0;
+        Debug.Log("유닛 찾음ㅋ");
+    }
 
-        if (monster != null)
+    public override void Move()
+    {
+        if (monsters[0] != null)
         {
-            agent.SetDestination(monster.transform.position);
-            transform.LookAt(monster.transform.position);
+            agent.SetDestination(monsters[0].transform.position);
+            transform.LookAt(monsters[0].transform.position);
         }
         else
         {

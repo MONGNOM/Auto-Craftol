@@ -61,7 +61,6 @@ public class Monster : UnitBase
     {
 
         anim.SetBool("Death", true);
-        target.monsterTarget.Remove(target.monsterTarget[0]);
         agent.isStopped = true;
         anim.SetBool("Attack", false);
         Destroy(gameObject);
@@ -69,12 +68,12 @@ public class Monster : UnitBase
 
     public override void Move()
     {
-        if (targets.Count == 0)
+        if (humans.Length == 0)
             Idle();
         else
         {
-            transform.LookAt(targets[0].transform.position);
-            agent.SetDestination(targets[0].transform.position);
+            transform.LookAt(humans[0].transform.position);
+            agent.SetDestination(humans[0].transform.position);
             anim.SetBool("Idle", false);
         }
     }
