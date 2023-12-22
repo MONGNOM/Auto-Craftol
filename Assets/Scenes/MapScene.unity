@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 316132902}
+  time: 0
 --- !u!4 &38380998
 Transform:
   m_ObjectHideFlags: 0
@@ -48259,7 +48260,7 @@ PrefabInstance:
     - target: {fileID: 9019069322532213961, guid: 3f4be1a0f1ee246b0ba3d185e5db04bc,
         type: 3}
       propertyPath: maxhp
-      value: 100
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 9019069322532213961, guid: 3f4be1a0f1ee246b0ba3d185e5db04bc,
         type: 3}

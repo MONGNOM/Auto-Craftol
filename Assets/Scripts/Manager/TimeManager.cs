@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager instance;
     public TextMeshProUGUI text;
-    float time;
+    public float time;
 
     private void Awake()
     {
@@ -17,25 +17,25 @@ public class TimeManager : MonoBehaviour
     }
     void Update()
     {
-        time -= Time.deltaTime;
+        TimeCount();
 
         if (time > 0)
         {
-
             if (time <= 10)
             {
                 ColorChange();
             }
-
         }
         else
-        {
-            Time.timeScale = 0;
-        }
-
-        text.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(time).ToString());
-
+            TimeStop();
     }
+
+    public void TimeCount()
+    {
+        time -= Time.deltaTime;
+        text.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(time).ToString());
+    }
+
     public void TimeStart()
     {
         Time.timeScale = 1;

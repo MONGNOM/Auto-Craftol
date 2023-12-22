@@ -59,7 +59,6 @@ public class Monster : UnitBase
 
     public override void Death()
     {
-
         anim.SetBool("Death", true);
         agent.isStopped = true;
         anim.SetBool("Attack", false);

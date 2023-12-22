@@ -41,7 +41,7 @@ public class Human : UnitBase
     {
         findTime += Time.deltaTime;
 
-        if (findTime >= 5)
+        if (findTime >= 65)
             FindTarget();
 
         hpbar.fillAmount = curhp / Maxhp;
@@ -53,7 +53,6 @@ public class Human : UnitBase
     public virtual void DistanceAttack()
     {
         anim.SetBool("Attack",true);
-        
     }       
  
     public override void Attack()
@@ -85,6 +84,7 @@ public class Human : UnitBase
         }
         else
         {
+            GameManager.instance.RoundEnd();
             anim.SetBool("Attack", false);
             anim.SetBool("Idle", true);
         }
