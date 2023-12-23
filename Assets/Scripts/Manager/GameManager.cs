@@ -14,13 +14,12 @@ public class GameManager : MonoBehaviour
 
     public void RoundStart()
     {
-        TimeManager.instance.RoundTime();
 
     }
 
     public void RoundEnd()
     {
-        TimeManager.instance.BreakTime();
 
     }
+
 }

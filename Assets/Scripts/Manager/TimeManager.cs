@@ -7,21 +7,24 @@ using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager instance;
-    public TextMeshProUGUI text;
-    public float time;
+    public TextMeshProUGUI roundTimeText;
+    public TextMeshProUGUI breakTimeText;
+    public float roundTime;
+    public float breakTime;
 
     private void Awake()
     {
         instance = this;
-        time = 60f;
+        roundTime = 60f;
+        breakTime = 10f;
     }
     void Update()
     {
         TimeCount();
 
-        if (time > 0)
+        if (roundTime > 0)
         {
-            if (time <= 10)
+            if (roundTime <= 10)
             {
                 ColorChange();
             }
@@ -32,8 +35,8 @@ public class TimeManager : MonoBehaviour
 
     public void TimeCount()
     {
-        time -= Time.deltaTime;
-        text.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(time).ToString());
+        roundTime -= Time.deltaTime;
+        roundTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(roundTime).ToString());
     }
 
     public void TimeStart()
@@ -46,19 +49,9 @@ public class TimeManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void BreakTime()
-    {
-        time = 5f;    
-    }
-
-    public void RoundTime()
-    {
-        time = 60f;
-    }
-
     public void ColorChange()
     {
-        text.color = Color.red;
+        roundTimeText.color = Color.red;
     }
 }
 
