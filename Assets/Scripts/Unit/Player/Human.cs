@@ -84,7 +84,6 @@ public class Human : UnitBase
         }
         else
         {
-            GameManager.instance.RoundEnd();
             anim.SetBool("Attack", false);
             anim.SetBool("Idle", true);
         }

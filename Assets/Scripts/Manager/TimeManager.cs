@@ -26,10 +26,11 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        RoundTimeCount();
+       
 
         if (roundTime > 0)
         {
+            RoundTimeCount();
             if (roundTime <= 10)
             {
                 ColorChange();
@@ -37,11 +38,14 @@ public class TimeManager : MonoBehaviour
         }
         else
         {
-            ChangeTime();
+            BreakChangeTime();
             BreakTimeCount();
             if (breakTime <= 0)
             {
-                ChangeTime();
+                roundTime = 60f;
+                roundTimeText.color = Color.white;
+                RoundChangeTime();
+                RoundTimeCount();
             }
         }
     }
@@ -57,16 +61,23 @@ public class TimeManager : MonoBehaviour
     {
         breakTime -= Time.deltaTime;
         breakTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(breakTime).ToString());
-        roundTime = 60f;
+        roundTime = 0f;
     }
 
 
-    public void ChangeTime()
+    public void BreakChangeTime()
     {
-        roundTimeText.gameObject.SetActive(!gameObject.activeSelf);
+        roundTimeText.gameObject.SetActive(false);
         breakTimeText.gameObject.SetActive(true);
+
     }
 
+    public void RoundChangeTime()
+    {
+        roundTimeText.gameObject.SetActive(true);
+        breakTimeText.gameObject.SetActive(false);
+
+    }
 
 
     public void ColorChange()
