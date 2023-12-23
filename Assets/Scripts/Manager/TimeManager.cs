@@ -18,6 +18,12 @@ public class TimeManager : MonoBehaviour
         roundTime = 15f;
         breakTime = 10f;
     }
+
+    private void Start()
+    {
+        breakTimeText.gameObject.SetActive(false);
+    }
+
     void Update()
     {
         RoundTimeCount();
@@ -33,6 +39,10 @@ public class TimeManager : MonoBehaviour
         {
             ChangeTime();
             BreakTimeCount();
+            if (breakTime <= 0)
+            {
+                ChangeTime();
+            }
         }
     }
 
@@ -40,18 +50,20 @@ public class TimeManager : MonoBehaviour
     {
         roundTime -= Time.deltaTime;
         roundTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(roundTime).ToString());
+        breakTime = 10f;
     }
 
     public void BreakTimeCount()
     {
         breakTime -= Time.deltaTime;
         breakTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(breakTime).ToString());
+        roundTime = 60f;
     }
 
 
     public void ChangeTime()
     {
-        roundTimeText.gameObject.SetActive(false);
+        roundTimeText.gameObject.SetActive(!gameObject.activeSelf);
         breakTimeText.gameObject.SetActive(true);
     }
 
