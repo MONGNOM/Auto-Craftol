@@ -15,12 +15,12 @@ public class TimeManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        roundTime = 60f;
+        roundTime = 15f;
         breakTime = 10f;
     }
     void Update()
     {
-        TimeCount();
+        RoundTimeCount();
 
         if (roundTime > 0)
         {
@@ -30,24 +30,32 @@ public class TimeManager : MonoBehaviour
             }
         }
         else
-            TimeStop();
+        {
+            ChangeTime();
+            BreakTimeCount();
+        }
     }
 
-    public void TimeCount()
+    public void RoundTimeCount()
     {
         roundTime -= Time.deltaTime;
         roundTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(roundTime).ToString());
     }
 
-    public void TimeStart()
+    public void BreakTimeCount()
     {
-        Time.timeScale = 1;
+        breakTime -= Time.deltaTime;
+        breakTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(breakTime).ToString());
     }
 
-    public void TimeStop()
+
+    public void ChangeTime()
     {
-        Time.timeScale = 0;
+        roundTimeText.gameObject.SetActive(false);
+        breakTimeText.gameObject.SetActive(true);
     }
+
+
 
     public void ColorChange()
     {
