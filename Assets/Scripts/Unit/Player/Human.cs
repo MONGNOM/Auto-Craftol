@@ -78,10 +78,10 @@ public class Human : UnitBase
 
     public override void Move()
     {
-        if (monsters[0] != null)
+        if (WaveManager.instance.monsters[0] != null)
         {
-            agent.SetDestination(monsters[0].transform.position);
-            transform.LookAt(monsters[0].transform.position);
+            agent.SetDestination(WaveManager.instance.monsters[0].transform.position);
+            transform.LookAt(WaveManager.instance.monsters[0].transform.position);
         }
         else
         {
