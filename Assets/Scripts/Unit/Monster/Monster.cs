@@ -62,7 +62,10 @@ public class Monster : UnitBase
         anim.SetBool("Death", true);
         agent.isStopped = true;
         anim.SetBool("Attack", false);
+        WaveManager.instance.DestroyUnit();
         Destroy(gameObject);
+        WaveManager.instance.UnitSpawn();
+
     }
 
     public override void Move()

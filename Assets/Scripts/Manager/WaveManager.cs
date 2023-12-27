@@ -11,15 +11,19 @@ public class WaveManager : MonoBehaviour
     public Monster[] mon;
     public List<Monster> monsters = new List<Monster>();
 
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        monster.SetActive(true);
-        mon = GameObject.FindObjectsOfType<Monster>();
         for (int i = 0; i < mon.Length; i++)
         {
             monsters.Add(mon[i]);
             monsters[i] = mon[i];
         }
+        UnitSpawn();
+        Debug.Log(monsters[0]);
     }
 
 

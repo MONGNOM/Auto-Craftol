@@ -22,7 +22,7 @@ public class Human : UnitBase
 
     private void Awake()
     {
-        monster = FindObjectOfType<Monster>();
+       
         box     = GetComponentInChildren<BoxCollider>();
         agent   = GetComponent<NavMeshAgent>();
         anim    = GetComponentInChildren<Animator>();
@@ -32,6 +32,7 @@ public class Human : UnitBase
 
     private void Start()    
     {
+        monster = FindObjectOfType<Monster>();
         monsters = FindObjectsOfType<Monster>();
         curhp = Maxhp;
         box.enabled = false;

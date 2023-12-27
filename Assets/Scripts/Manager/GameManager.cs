@@ -13,9 +13,8 @@ public class GameManager : MonoBehaviour
 
     public void RoundStart()
     {
-        WaveManager.instance.monsters[0].gameObject.SetActive(true);
+        WaveManager.instance.UnitSpawn();
     }
-
     public void RoundEnd()
     {
         WaveManager.instance.monsters[0].gameObject.SetActive(false);
