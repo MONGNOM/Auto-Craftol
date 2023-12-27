@@ -15,7 +15,7 @@ public class TimeManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        roundTime = 5f;
+        roundTime = 60f;
         breakTime = 5f;
     }
 
@@ -26,7 +26,20 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-       
+        if (WaveManager.instance.roundMonster[0] == null)
+        {
+            BreakChangeTime();
+            BreakTimeCount();
+            if (breakTime <= 0)
+            {
+                roundTime = 60f;
+                roundTimeText.color = Color.white;
+                GameManager.instance.RoundStart();
+                RoundChangeTime();
+                RoundTimeCount();
+                GameManager.instance.RoundStart();
+            }
+        }
 
         if (roundTime > 0)
         {

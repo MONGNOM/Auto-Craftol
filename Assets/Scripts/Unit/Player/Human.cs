@@ -71,6 +71,7 @@ public class Human : UnitBase
 
     public void FindTarget()
     {
+        // round start --> fix
         monsters = FindObjectsOfType<Monster>();
         findTime = 0;
         Debug.Log("유닛 찾음ㅋ");

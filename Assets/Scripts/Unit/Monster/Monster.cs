@@ -17,7 +17,7 @@ public class Monster : UnitBase
     public Human[] humans; // GameManager --> stage clear --> humans[] clear; && Win or Lose
     public List<Human> targets = new List<Human>();
     // Round Monster Y or N = RoundTime --> BreakTime
-    public Dictionary<string,Monster> roundMonster = new Dictionary<string,Monster>();
+    
 
     private void Awake()
     {
@@ -29,6 +29,7 @@ public class Monster : UnitBase
 
     private void Start()
     {
+  
         curhp = maxhp;
         humans = GameObject.FindObjectsOfType<Human>();
         for (int i = 0; i < humans.Length; i++) 

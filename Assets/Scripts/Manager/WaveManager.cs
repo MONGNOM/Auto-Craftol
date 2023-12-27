@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
     public GameObject monster;
     public Monster[] mon;
     public List<Monster> monsters = new List<Monster>();
+    public Dictionary<int, Monster> roundMonster = new Dictionary<int, Monster>();
 
     private void Awake()
     {
@@ -21,9 +22,12 @@ public class WaveManager : MonoBehaviour
         {
             monsters.Add(mon[i]);
             monsters[i] = mon[i];
+            roundMonster.Add(i,mon[i]);
         }
         UnitSpawn();
         Debug.Log(monsters[0]);
+
+        
     }
 
 
