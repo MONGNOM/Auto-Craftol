@@ -11,15 +11,14 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-
     public void RoundStart()
     {
-
+        WaveManager.instance.monsters[0].gameObject.SetActive(true);
     }
 
     public void RoundEnd()
     {
-
+        WaveManager.instance.monsters[0].gameObject.SetActive(false);
     }
 
 }

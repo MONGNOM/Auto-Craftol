@@ -44,6 +44,7 @@ public class TimeManager : MonoBehaviour
             {
                 roundTime = 60f;
                 roundTimeText.color = Color.white;
+                GameManager.instance.RoundStart();
                 RoundChangeTime();
                 RoundTimeCount();
             }
