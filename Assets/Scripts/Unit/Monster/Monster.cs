@@ -16,6 +16,8 @@ public class Monster : UnitBase
     public Image hpbar;
     public Human[] humans; // GameManager --> stage clear --> humans[] clear; && Win or Lose
     public List<Human> targets = new List<Human>();
+    // Round Monster Y or N = RoundTime --> BreakTime
+    public Dictionary<string,Monster> roundMonster = new Dictionary<string,Monster>();
 
     private void Awake()
     {
