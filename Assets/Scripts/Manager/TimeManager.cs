@@ -15,8 +15,8 @@ public class TimeManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        roundTime = 15f;
-        breakTime = 10f;
+        roundTime = 5f;
+        breakTime = 5f;
     }
 
     private void Start()
@@ -47,6 +47,7 @@ public class TimeManager : MonoBehaviour
                 GameManager.instance.RoundStart();
                 RoundChangeTime();
                 RoundTimeCount();
+                GameManager.instance.RoundStart();
             }
         }
     }
@@ -55,7 +56,7 @@ public class TimeManager : MonoBehaviour
     {
         roundTime -= Time.deltaTime;
         roundTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(roundTime).ToString());
-        breakTime = 10f;
+        breakTime = 5f;
     }
 
     public void BreakTimeCount()

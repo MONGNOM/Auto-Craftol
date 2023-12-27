@@ -42,7 +42,7 @@ public class Human : UnitBase
     {
         findTime += Time.deltaTime;
 
-        if (findTime >= 65)
+        if (findTime >= 10.1)
             FindTarget();
 
         hpbar.fillAmount = curhp / Maxhp;
@@ -78,10 +78,11 @@ public class Human : UnitBase
 
     public override void Move()
     {
-        if (WaveManager.instance.monsters[0] != null)
+        if (monsters[0] != null)
         {
-            agent.SetDestination(WaveManager.instance.monsters[0].transform.position);
-            transform.LookAt(WaveManager.instance.monsters[0].transform.position);
+            anim.SetBool("Idle", false);
+            agent.SetDestination(monsters[0].transform.position);
+            transform.LookAt(monsters[0].transform.position);
         }
         else
         {
