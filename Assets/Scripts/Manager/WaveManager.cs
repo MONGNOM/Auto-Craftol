@@ -22,7 +22,8 @@ public class WaveManager : MonoBehaviour
         {
             monsters.Add(mon[i]);
             monsters[i] = mon[i];
-            roundMonster.Add(i,mon[i]);
+            roundMonster.Add(i, mon[i]);
+            roundMonster[i] = monsters[i]; // roundmonster --> 1pick --> Death --> roundMonster[0].missing --> roundMonster[0].add -->  
         }
         UnitSpawn();
         Debug.Log(monsters[0]);
