@@ -39,6 +39,7 @@ public class TimeManager : MonoBehaviour
                 RoundTimeCount();
                 GameManager.instance.RoundStart();
                 WaveManager.instance.FindUnit();
+                WaveManager.instance.FindPlayer();
             }
         }
 
@@ -63,6 +64,7 @@ public class TimeManager : MonoBehaviour
                 RoundTimeCount();
                 GameManager.instance.RoundStart();
                 WaveManager.instance.FindUnit();
+                WaveManager.instance.FindPlayer();
             }
         }
     }
@@ -71,7 +73,7 @@ public class TimeManager : MonoBehaviour
     {
         roundTime -= Time.deltaTime;
         roundTimeText.text = string.Format("{0}{1}", "Time left: ", Mathf.Ceil(roundTime).ToString());
-        breakTime = 5f;
+        breakTime = 10f;
     }
 
     public void BreakTimeCount()

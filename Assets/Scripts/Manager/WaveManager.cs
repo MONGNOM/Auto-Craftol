@@ -9,7 +9,11 @@ public class WaveManager : MonoBehaviour
 
     public Monster[] mon;
     public List<Monster> monsters = new List<Monster>();
+
+    public Human[] hum;
+    public List<Human> humans = new List<Human>(); 
     public Monster roundMonster;
+    public Human roundHuman;
     private void Awake()
     {
         instance = this;
@@ -22,11 +26,22 @@ public class WaveManager : MonoBehaviour
         {
             monsters.Add(mon[i]);
             monsters[i] = mon[i];
-           
         }
         UnitSpawn();
         FindUnit();
-        Debug.Log(monsters[0]);
+        FindPlayer();
+    }
+
+
+    public void FindPlayer()
+    {
+        hum = GameObject.FindObjectsOfType<Human>();
+        roundHuman = FindObjectOfType<Human>();
+        for (int i = 0; i < hum.Length; i++)
+        {
+            humans.Add(hum[i]);
+            humans[i] = hum[i];
+        }
     }
 
     public void FindUnit()
