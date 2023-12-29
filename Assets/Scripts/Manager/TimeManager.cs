@@ -38,6 +38,7 @@ public class TimeManager : MonoBehaviour
                 RoundChangeTime();
                 RoundTimeCount();
                 GameManager.instance.RoundStart();
+                WaveManager.instance.FindUnit();
             }
         }
 

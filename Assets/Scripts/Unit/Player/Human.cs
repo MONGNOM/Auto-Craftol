@@ -14,10 +14,7 @@ public class Human : UnitBase
                                         private NavMeshAgent agent;
                                         private BoxCollider box;    
                                         public Animator anim;
-                                        public  Monster[] monsters;
-                                        public  List<Monster> monsterTarget = new List<Monster>();
                                         public Image hpbar;
-    public float findTime = 0f;
     
 
     private void Awake()
@@ -33,18 +30,12 @@ public class Human : UnitBase
     private void Start()    
     {
         monster = FindObjectOfType<Monster>();
-        monsters = FindObjectsOfType<Monster>();
         curhp = Maxhp;
         box.enabled = false;
         
     }
     private void Update()
     {
-        findTime += Time.deltaTime;
-
-        if (findTime >= 10.1)
-            FindTarget();
-
         hpbar.fillAmount = curhp / Maxhp;
         if (curhp <= 0)
             Death();    
@@ -69,21 +60,13 @@ public class Human : UnitBase
         
     }
 
-    public void FindTarget()
-    {
-        // round start --> fix
-        monsters = FindObjectsOfType<Monster>();
-        findTime = 0;
-        Debug.Log("유닛 찾음ㅋ");
-    }
-
     public override void Move()
     {
-        if (monsters[0] != null)
+        if (WaveManager.instance.roundMonster != null)
         {
             anim.SetBool("Idle", false);
-            agent.SetDestination(monsters[0].transform.position);
-            transform.LookAt(monsters[0].transform.position);
+            agent.SetDestination(WaveManager.instance.roundMonster.transform.position);
+            transform.LookAt(WaveManager.instance.roundMonster.transform.position);
         }
         else
         {
