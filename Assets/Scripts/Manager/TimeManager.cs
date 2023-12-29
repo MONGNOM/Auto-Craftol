@@ -53,6 +53,9 @@ public class TimeManager : MonoBehaviour
         }
         else
         {
+            if (WaveManager.instance.roundMonster != null)
+                Time.timeScale = 0;
+
             BreakChangeTime();
             BreakTimeCount();
             if (breakTime <= 0)
