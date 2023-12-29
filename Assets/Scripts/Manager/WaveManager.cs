@@ -51,12 +51,23 @@ public class WaveManager : MonoBehaviour
 
     public void UnitSpawn()
     {
-        monsters[0].gameObject.SetActive(true);
+        if (monsters.Count == 0)
+        {
+            VictoryGame();
+            return;
+        }
+            monsters[0].gameObject.SetActive(true);
     }
 
     public void DestroyUnit()
     {
         monsters.Remove(monsters[0]);
+    }
+
+    public void VictoryGame()
+    {
+        if(roundMonster == null)
+           Time.timeScale = 0;
     }
     
 }
