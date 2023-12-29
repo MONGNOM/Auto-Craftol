@@ -7,30 +7,32 @@ public class WaveManager : MonoBehaviour
     public static WaveManager instance;
     public Transform spawnPosition;
 
-    public GameObject monster;
     public Monster[] mon;
     public List<Monster> monsters = new List<Monster>();
-    public Dictionary<int, Monster> roundMonster = new Dictionary<int, Monster>();
-
+    public Monster roundMonster;
     private void Awake()
     {
         instance = this;
+        
     }
+    // humanfindTarget = RoundMonster;
     void Start()
     {
         for (int i = 0; i < mon.Length; i++)
         {
             monsters.Add(mon[i]);
             monsters[i] = mon[i];
-            roundMonster.Add(i, mon[i]);
-            roundMonster[i] = monsters[i]; // roundmonster --> 1pick --> Death --> roundMonster[0].missing --> roundMonster[0].add -->  
+           
         }
         UnitSpawn();
+        FindUnit();
         Debug.Log(monsters[0]);
-
-        
     }
 
+    public void FindUnit()
+    {
+        roundMonster = FindObjectOfType<Monster>();
+    }
 
     public void UnitSpawn()
     {

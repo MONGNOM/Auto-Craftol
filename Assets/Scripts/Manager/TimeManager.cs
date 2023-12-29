@@ -26,7 +26,7 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        if (WaveManager.instance.roundMonster[0] == null)
+        if (WaveManager.instance.roundMonster == null)
         {
             BreakChangeTime();
             BreakTimeCount();
@@ -61,6 +61,7 @@ public class TimeManager : MonoBehaviour
                 RoundChangeTime();
                 RoundTimeCount();
                 GameManager.instance.RoundStart();
+                WaveManager.instance.FindUnit();
             }
         }
     }
