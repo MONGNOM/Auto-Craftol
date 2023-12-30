@@ -14,9 +14,7 @@ public class Monster : UnitBase
     private Human target;   
     private BoxCollider box;
     public Image hpbar;
-    public Human[] humans; // GameManager --> stage clear --> humans[] clear; && Win or Lose
     public List<Human> targets = new List<Human>();
-    // Round Monster Y or N = RoundTime --> BreakTime
     
 
     private void Awake()
@@ -29,19 +27,10 @@ public class Monster : UnitBase
 
     private void Start()
     {
-  
         curhp = maxhp;
-        humans = GameObject.FindObjectsOfType<Human>();
-        for (int i = 0; i < humans.Length; i++) 
-        {
-            targets.Add(target); 
-            targets[i] = humans[i]; // targets --> human != null but not find?
-        }
     }
     private void Update()
     {
-        humans = GameObject.FindObjectsOfType<Human>();
-
         hpbar.fillAmount = curhp / maxhp;
         if (curhp <= 0)
             Death();
@@ -71,12 +60,12 @@ public class Monster : UnitBase
 
     public override void Move()
     {
-        if (humans.Length == 0)
+        if (WaveManager.instance.humans.Count == 0)
             Idle();
         else
         {
-            transform.LookAt(humans[0].transform.position);
-            agent.SetDestination(humans[0].transform.position);
+            transform.LookAt(WaveManager.instance.humans[0].transform.position);
+            agent.SetDestination(WaveManager.instance.humans[0].transform.position);
             anim.SetBool("Idle", false);
         }
     }
@@ -84,7 +73,7 @@ public class Monster : UnitBase
     public void Idle()
     {
         anim.SetBool("Idle", true);
-        humans = null;
+        WaveManager.instance.hum = null;
     }
 
     private void OnTriggerEnter(Collider other)

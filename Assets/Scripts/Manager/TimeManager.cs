@@ -26,7 +26,11 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        if (WaveManager.instance.roundMonster == null)
+        if (WaveManager.instance.hum == null)
+        {
+            WaveManager.instance.Defeat();
+        }
+        else if (WaveManager.instance.roundMonster == null)
         {
             BreakChangeTime();
             BreakTimeCount();

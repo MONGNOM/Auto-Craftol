@@ -56,6 +56,7 @@ public class Human : UnitBase
     {
         anim.SetBool("Death", true);
         agent.isStopped = true;
+        WaveManager.instance.humans.Remove(WaveManager.instance.humans[0]);
         Destroy(gameObject);
         
     }

@@ -13,13 +13,12 @@ public class WaveManager : MonoBehaviour
     public Human[] hum;
     public List<Human> humans = new List<Human>(); 
     public Monster roundMonster;
-    public Human roundHuman;
+
     private void Awake()
     {
         instance = this;
         
     }
-    // humanfindTarget = RoundMonster;
     void Start()
     {
         for (int i = 0; i < mon.Length; i++)
@@ -32,11 +31,9 @@ public class WaveManager : MonoBehaviour
         FindPlayer();
     }
 
-
     public void FindPlayer()
     {
         hum = GameObject.FindObjectsOfType<Human>();
-        roundHuman = FindObjectOfType<Human>();
         for (int i = 0; i < hum.Length; i++)
         {
             humans.Add(hum[i]);
@@ -53,6 +50,7 @@ public class WaveManager : MonoBehaviour
     {
         if (monsters.Count == 0)
         {
+            mon = null;
             VictoryGame();
             return;
         }
@@ -64,10 +62,19 @@ public class WaveManager : MonoBehaviour
         monsters.Remove(monsters[0]);
     }
 
+    public void Defeat()
+    {
+        if (hum == null)
+        {
+            Time.timeScale = 0;
+        }
+    }
+
     public void VictoryGame()
     {
-        if(roundMonster == null)
+        if(mon == null)
            Time.timeScale = 0;
     }
-    
+
+
 }
