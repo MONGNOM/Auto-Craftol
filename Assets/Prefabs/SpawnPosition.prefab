@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn: {fileID: 0}
   warrior: {fileID: 3258383144658371522, guid: eefa3b1ca3d26421cbf5c34397b08765, type: 3}
-  archer: {fileID: 3631084872603948265, guid: a0c8eb653c106490cb10f9bdbae4c975, type: 3}
-  prist: {fileID: 3113920772691857524, guid: d3ad4e4bd37ec4de18c287db58eb8b3c, type: 3}
+  archer: {fileID: 6085233890018305329, guid: a0c8eb653c106490cb10f9bdbae4c975, type: 3}
+  prist: {fileID: 877257932602416053, guid: a54f535319a1148b4970c8bd4d43a1c2, type: 3}
 --- !u!65 &497681446736977052
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -281,7 +281,6 @@ MonoBehaviour:
   - {fileID: 0}
   humans: []
   roundMonster: {fileID: 0}
-  roundHuman: {fileID: 0}
 --- !u!1 &91191655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1061,6 @@ MonoBehaviour:
   curhp: 0
   damage: 1000
   hpbar: {fileID: 1458969371}
-  humans: []
   targets: []
 --- !u!136 &127189052
 CapsuleCollider:
@@ -9666,7 +9664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Maxhp: 1000
-  damage: 10
+  damage: 1000000
   monster: {fileID: 0}
   curhp: 0
   anim: {fileID: 0}
@@ -15262,7 +15260,7 @@ PrefabInstance:
     - target: {fileID: 1926320659648307049, guid: eefa3b1ca3d26421cbf5c34397b08765,
         type: 3}
       propertyPath: damage
-      value: 1000000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3258383144658371522, guid: eefa3b1ca3d26421cbf5c34397b08765,
         type: 3}
@@ -49000,7 +48998,7 @@ PrefabInstance:
     - target: {fileID: 9019069322532213961, guid: 3f4be1a0f1ee246b0ba3d185e5db04bc,
         type: 3}
       propertyPath: damage
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 9019069322532213961, guid: 3f4be1a0f1ee246b0ba3d185e5db04bc,
         type: 3}
