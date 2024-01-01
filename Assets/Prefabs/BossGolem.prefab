@@ -715,11 +715,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a09232dd10849e0ac2fa42aeb6fe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhp: 1000000
+  maxhp: 1
   curhp: 0
-  damage: 50
+  damage: 1000
   hpbar: {fileID: 6683663382463215741}
-  humans: []
   targets: []
 --- !u!195 &2158497089209161108
 NavMeshAgent:
@@ -789,7 +788,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.7
+  m_Radius: 3
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}

@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9cb797532b341879fb7f23f3e79f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhp: 10000
+  Maxhp: 1000
   damage: 100
   monster: {fileID: 0}
   curhp: 0

@@ -5831,7 +5831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Maxhp: 1000
-  damage: 1000000
+  damage: 200
   monster: {fileID: 0}
   curhp: 0
   anim: {fileID: 0}
