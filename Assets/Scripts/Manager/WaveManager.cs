@@ -26,9 +26,6 @@ public class WaveManager : MonoBehaviour
             monsters.Add(mon[i]);
             monsters[i] = mon[i];
         }
-        UnitSpawn();
-        FindUnit();
-        FindPlayer();
     }
 
     public void FindPlayer()

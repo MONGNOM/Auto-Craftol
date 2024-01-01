@@ -21,7 +21,7 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
-        breakTimeText.gameObject.SetActive(false);
+        
     }
 
     void Update()
