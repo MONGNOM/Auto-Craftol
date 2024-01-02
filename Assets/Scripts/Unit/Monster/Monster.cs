@@ -11,7 +11,6 @@ public class Monster : UnitBase
     [Range(0, 1000)]                    public float damage;
     private NavMeshAgent agent;
     private Animator anim;
-    private Human target;   
     private BoxCollider box;
     public Image hpbar;
     public List<Human> targets = new List<Human>();
@@ -19,7 +18,6 @@ public class Monster : UnitBase
 
     private void Awake()
     {
-        target  = FindObjectOfType<Human>();
         agent   = GetComponent<NavMeshAgent>();
         anim    = GetComponent<Animator>();
         box     = GetComponentInChildren<BoxCollider>();
