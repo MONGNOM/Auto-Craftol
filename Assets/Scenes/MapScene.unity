@@ -763,6 +763,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2064373483513726682, guid: 5ee0cdef57a554953bc75b683767e6c0,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064373483513726682, guid: 5ee0cdef57a554953bc75b683767e6c0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5533148299130330191, guid: 5ee0cdef57a554953bc75b683767e6c0,
         type: 3}
       propertyPath: m_Name
