@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Monster : UnitBase
 {
-    [SerializeField, Range(0, 1000000)] private float maxhp;
+    public new string name;
+    [SerializeField, Range(0, 1000000)] public float maxhp;
     [SerializeField]                    private float curhp;
     [Range(0, 1000)]                    public float damage;
     private NavMeshAgent agent;

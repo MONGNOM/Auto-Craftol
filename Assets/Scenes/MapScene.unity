@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 38380997}
   - component: {fileID: 38380999}
   - component: {fileID: 38381000}
+  - component: {fileID: 38381001}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -257,6 +258,18 @@ MonoBehaviour:
   hum: []
   humans: []
   roundMonster: {fileID: 0}
+--- !u!114 &38381001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38380996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bc49140782c4d828e472501d3f5b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &91191655
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +443,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 645990418441012194, guid: ecb09d9a638f54dd18c084bec4193f0d,
+        type: 3}
+      propertyPath: maxhp
+      value: 297710
+      objectReference: {fileID: 0}
+    - target: {fileID: 645990418441012194, guid: ecb09d9a638f54dd18c084bec4193f0d,
+        type: 3}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2327113727307240827, guid: ecb09d9a638f54dd18c084bec4193f0d,
         type: 3}
       propertyPath: m_Name

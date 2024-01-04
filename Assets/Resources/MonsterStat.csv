@@ -1,0 +1,12 @@
+Name,Hp,Damage
+Slim,1000,100
+Turtle,1500,200
+Grunt,3000,250
+BossGrunt,4000,300
+Lich,4500,350
+BossLich,5000,400
+PolyGolem,5500,500
+Golem,6000,550
+BossGolem,7000,700
+Skeleton,8000,800
+BossSkeleton,100000,1000
