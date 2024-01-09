@@ -309,6 +309,8 @@ MonoBehaviour:
   curhp: 0
   anim: {fileID: 0}
   hpbar: {fileID: 2500564821844828457}
+  particle: {fileID: 4678103677468820507, guid: 1245b8d2997d5b34fb1637be70a7eb05,
+    type: 3}
 --- !u!195 &7895985087322073362
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class Human : UnitBase
                                         private BoxCollider box;    
                                         public Animator anim;
                                         public Image hpbar;
+    public ParticleSystem particle;
     
 
     private void Awake()
@@ -45,6 +46,7 @@ public class Human : UnitBase
     public virtual void DistanceAttack()
     {
         anim.SetBool("Attack",true);
+       
     }       
  
     public override void Attack()
@@ -104,6 +106,8 @@ public class Human : UnitBase
     public void OnPlayerWeapon()
     {
         box.enabled = true;
+        particle.Play();
+        Debug.Log(particle);
     }
 
     public void OffPlayerWeapon()

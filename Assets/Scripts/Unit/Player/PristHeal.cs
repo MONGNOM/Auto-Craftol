@@ -5,6 +5,7 @@ using UnityEngine;
 public class PristHeal : MonoBehaviour
 {
     Human player;
+    public ParticleSystem particle;
     private void Awake()
     {
         player = GetComponentInParent<Human>();
@@ -12,9 +13,12 @@ public class PristHeal : MonoBehaviour
         
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<Human>())    
+        if (other.GetComponentInParent<Human>())
         {
+            particle = other.GetComponentInChildren<ParticleSystem>();
             Human human = other.GetComponent<Human>();
+            particle.Play();
+            Debug.Log(particle);
             human.curhp += player.damage;
         }           
     }
