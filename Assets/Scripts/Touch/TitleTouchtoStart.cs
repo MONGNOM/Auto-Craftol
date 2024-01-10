@@ -22,9 +22,9 @@ public class TitleTouchtoStart : MonoBehaviour
         while (true)
         {
             text.text = "Touch to Start";
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.6f);
             text.text = "";
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.6f);
 
         }
     }

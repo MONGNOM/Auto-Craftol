@@ -7,16 +7,17 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Human : UnitBase
 {
-    [SerializeField, Range(0, 100000)]  private float Maxhp;
+    [SerializeField, Range(0, 100000)]  public float Maxhp;
     [Range(0, 1000000)]                 public  float damage;
     [HideInInspector]                   public  Monster monster;
     /*[HideInInspector]*/               public float curhp;
-                                        private NavMeshAgent agent;
+                                        public NavMeshAgent agent;
                                         private BoxCollider box;    
                                         public Animator anim;
                                         public Image hpbar;
     public ParticleSystem particle;
-    
+
+    public Vector3 startpos;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class Human : UnitBase
         monster = FindObjectOfType<Monster>();
         curhp = Maxhp;
         box.enabled = false;
-        
+        startpos = gameObject.transform.position; 
     }
     private void Update()
     {
@@ -68,6 +69,7 @@ public class Human : UnitBase
         if (WaveManager.instance.roundMonster != null)
         {
             anim.SetBool("Idle", false);
+            WaveManager.instance.StartMove();
             agent.SetDestination(WaveManager.instance.roundMonster.transform.position);
             transform.LookAt(WaveManager.instance.roundMonster.transform.position);
         }

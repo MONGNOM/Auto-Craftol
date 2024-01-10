@@ -304,13 +304,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Maxhp: 1000
-  damage: 100
+  damage: 300
   monster: {fileID: 0}
   curhp: 0
+  agent: {fileID: 0}
   anim: {fileID: 0}
   hpbar: {fileID: 2500564821844828457}
   particle: {fileID: 4678103677468820507, guid: 1245b8d2997d5b34fb1637be70a7eb05,
     type: 3}
+  startpos: {x: 0, y: 0, z: 0}
 --- !u!195 &7895985087322073362
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -325,7 +327,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 49
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -701,6 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d691bdbeed5aa41fc8ace5fa80c6b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!1 &1970712031810030071
 GameObject:
   m_ObjectHideFlags: 0

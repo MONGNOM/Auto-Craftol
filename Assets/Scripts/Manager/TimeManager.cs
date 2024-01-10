@@ -9,6 +9,8 @@ public class TimeManager : MonoBehaviour
     public static TimeManager instance;
     public TextMeshProUGUI roundTimeText;
     public TextMeshProUGUI breakTimeText;
+    public Image spawncard;
+    public TextMeshProUGUI choice;
     public float roundTime;
     public float breakTime;
 
@@ -21,7 +23,7 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     void Update()
@@ -95,7 +97,7 @@ public class TimeManager : MonoBehaviour
     {
         roundTimeText.gameObject.SetActive(false);
         breakTimeText.gameObject.SetActive(true);
-
+        
     }
 
     public void RoundChangeTime()
@@ -105,6 +107,11 @@ public class TimeManager : MonoBehaviour
 
     }
 
+    public void ChoiceSpawnCard()
+    {
+        spawncard.gameObject.SetActive(true);
+        choice.gameObject.SetActive(true);
+    }
 
     public void ColorChange()
     {

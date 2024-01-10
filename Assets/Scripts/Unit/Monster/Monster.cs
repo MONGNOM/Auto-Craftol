@@ -15,7 +15,10 @@ public class Monster : UnitBase
     private BoxCollider box;
     public Image hpbar;
     public List<Human> targets = new List<Human>();
+    public int random;
     
+
+
 
     private void Awake()
     {
@@ -27,6 +30,7 @@ public class Monster : UnitBase
     private void Start()
     {
         curhp = maxhp;
+        random = Random.Range(0, WaveManager.instance.humans.Count);
     }
     private void Update()
     {
@@ -54,6 +58,9 @@ public class Monster : UnitBase
         agent.isStopped = true;
         anim.SetBool("Attack", false);
         WaveManager.instance.DestroyUnit();
+        TimeManager.instance.ChoiceSpawnCard();
+        WaveManager.instance.StartPos();
+
         Destroy(gameObject);
     }
 
@@ -62,9 +69,9 @@ public class Monster : UnitBase
         if (WaveManager.instance.humans.Count == 0)
             Idle();
         else
-        {
-            transform.LookAt(WaveManager.instance.humans[0].transform.position);
-            agent.SetDestination(WaveManager.instance.humans[0].transform.position);
+        {  // find player tag , colider
+            transform.LookAt(WaveManager.instance.humans[random].transform.position);
+            agent.SetDestination(WaveManager.instance.humans[random].transform.position);
             anim.SetBool("Idle", false);
         }
     }
@@ -93,6 +100,7 @@ public class Monster : UnitBase
         if (other.CompareTag("Player"))
         {
             anim.SetBool("Attack", false);
+            Debug.Log("player가 없다 공격중지");
         }
     }
 

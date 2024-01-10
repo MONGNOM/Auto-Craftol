@@ -157,13 +157,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9cb797532b341879fb7f23f3e79f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maxhp: 90566
-  damage: 1000
+  Maxhp: 2000
+  damage: 200
   monster: {fileID: 0}
   curhp: 0
+  agent: {fileID: 0}
   anim: {fileID: 0}
   hpbar: {fileID: 6158510278643307524}
   particle: {fileID: 7674962989996433497}
+  startpos: {x: 0, y: 0, z: 0}
 --- !u!195 &4542479982957819610
 NavMeshAgent:
   m_ObjectHideFlags: 0

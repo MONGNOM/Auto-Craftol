@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class WaveManager : MonoBehaviour
     public Human[] hum;
     public List<Human> humans = new List<Human>(); 
     public Monster roundMonster;
+    
+   
 
     private void Awake()
     {
@@ -28,13 +31,29 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    public void DeathPlayer()
+    {
+        for (int i = 0; i < humans.Count; i++)
+        {   
+            humans.Remove(humans[i]);
+        }
+    }
+
     public void FindPlayer()
     {
-        hum = GameObject.FindObjectsOfType<Human>();
+        
+        Array.Clear(hum, 0, hum.Length);
+        Array.FindAll(hum,hum);
+        humans.Clear();
+
+        Debug.Log("player null");
+        hum = FindObjectsOfType<Human>();
         for (int i = 0; i < hum.Length; i++)
-        {
+        {   
             humans.Add(hum[i]);
             humans[i] = hum[i];
+            Debug.Log("player add");
+
         }
     }
 
@@ -64,6 +83,27 @@ public class WaveManager : MonoBehaviour
         if (hum == null)
         {
             Time.timeScale = 0;
+        }
+    }
+
+    public void StartPos()
+    {
+        for (int i = 0; i < humans.Count; i++)
+        {
+            humans[i].transform.position = humans[i].startpos;
+            humans[i].agent.speed = 0;
+            humans[i].curhp = humans[i].Maxhp;
+        }
+    }
+
+    public void StartMove()
+    {
+        if (humans != null)
+        {
+            for (int i = 0; i < humans.Count; i++)
+            {
+                humans[i].agent.speed = 1;
+            }
         }
     }
 
