@@ -59,9 +59,10 @@ public class Human : UnitBase
     {
         anim.SetBool("Death", true);
         agent.isStopped = true;
-        WaveManager.instance.humans.Remove(WaveManager.instance.humans[0]);
+        WaveManager.instance.humans.Remove(WaveManager.instance.humans[WaveManager.instance.random]);
         Destroy(gameObject);
-        
+        WaveManager.instance.FindPlayer();
+        Debug.Log("11");
     }
 
     public override void Move()
@@ -69,7 +70,6 @@ public class Human : UnitBase
         if (WaveManager.instance.roundMonster != null)
         {
             anim.SetBool("Idle", false);
-            WaveManager.instance.StartMove();
             agent.SetDestination(WaveManager.instance.roundMonster.transform.position);
             transform.LookAt(WaveManager.instance.roundMonster.transform.position);
         }

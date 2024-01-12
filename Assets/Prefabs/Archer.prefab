@@ -5790,9 +5790,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1288259729371454425}
   - component: {fileID: 3972253595934711905}
-  - component: {fileID: 7496379102758149464}
   - component: {fileID: 2604800770503706482}
   - component: {fileID: 6287760744268873720}
+  - component: {fileID: 7021685805706297631}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Player
@@ -5840,28 +5840,6 @@ MonoBehaviour:
   hpbar: {fileID: 3218457074675811750}
   particle: {fileID: 484368387861551534, guid: 9b21333b068a5084ba09535839bee3c8, type: 3}
   startpos: {x: 0, y: 0, z: 0}
---- !u!195 &7496379102758149464
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6085233890018305329}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 0
-  m_Acceleration: 8
-  avoidancePriority: 49
-  m_AngularSpeed: 120
-  m_StoppingDistance: 4
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
 --- !u!136 &2604800770503706482
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5912,6 +5890,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &7021685805706297631
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085233890018305329}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 0
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 1
 --- !u!1 &6349475826355097793
 GameObject:
   m_ObjectHideFlags: 0

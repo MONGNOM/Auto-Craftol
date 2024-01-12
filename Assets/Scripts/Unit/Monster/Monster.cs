@@ -15,7 +15,6 @@ public class Monster : UnitBase
     private BoxCollider box;
     public Image hpbar;
     public List<Human> targets = new List<Human>();
-    public int random;
     
 
 
@@ -30,7 +29,6 @@ public class Monster : UnitBase
     private void Start()
     {
         curhp = maxhp;
-        random = Random.Range(0, WaveManager.instance.humans.Count);
     }
     private void Update()
     {
@@ -70,14 +68,15 @@ public class Monster : UnitBase
             Idle();
         else
         {  // find player tag , colider
-            transform.LookAt(WaveManager.instance.humans[random].transform.position);
-            agent.SetDestination(WaveManager.instance.humans[random].transform.position);
+           
+            transform.LookAt(WaveManager.instance.humans[WaveManager.instance.random].transform.position);
+            agent.SetDestination(WaveManager.instance.humans[WaveManager.instance.random].transform.position);
             anim.SetBool("Idle", false);
         }
     }
 
     public void Idle()
-    {
+    {   
         anim.SetBool("Idle", true);
         WaveManager.instance.hum = null;
     }
