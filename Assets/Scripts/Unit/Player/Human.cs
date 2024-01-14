@@ -57,10 +57,10 @@ public class Human : UnitBase
 
     public override void Death()
     {
+        WaveManager.instance.humans.Remove(WaveManager.instance.humans[WaveManager.instance.random]);
         anim.SetBool("Death", true);
         agent.isStopped = true;
-        WaveManager.instance.humans.Remove(WaveManager.instance.humans[WaveManager.instance.random]);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         WaveManager.instance.FindPlayer();
         Debug.Log("11");
     }

@@ -43,7 +43,6 @@ public class WaveManager : MonoBehaviour
 
     public void FindPlayer()
     {
-      
         Array.Clear(hum, 0, hum.Length);
        // Array.FindAll(hum,hum);
         humans.Clear();
@@ -52,16 +51,9 @@ public class WaveManager : MonoBehaviour
         hum = FindObjectsOfType<Human>();
         for (int i = 0; i < hum.Length; i++)
         {
-            if (humans == null)
-            {
-                Debug.Log("not player");
-                break;
-                // start 1.add 
-            }
             humans.Add(hum[i]);
             humans[i] = hum[i];
             Debug.Log("player add");
-
         }
         random = UnityEngine.Random.Range(0, humans.Count);
     }
