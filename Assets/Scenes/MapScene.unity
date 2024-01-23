@@ -266,6 +266,7 @@ MonoBehaviour:
   hum: []
   humans: []
   roundMonster: {fileID: 0}
+  random: 0
 --- !u!114 &38381001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11138,6 +11139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275784525206131883, guid: a6c470c34d8a342378a237c20ff095ee,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32178,6 +32184,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 5272293672972087829, guid: 746b5832bd04c4eb19c692f5a5f6e54c,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5399156827897836682, guid: 746b5832bd04c4eb19c692f5a5f6e54c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33573,6 +33584,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7684360779028796861, guid: 930d465036fd441bb9f0ad3a6565b846,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7875690295277535645, guid: 930d465036fd441bb9f0ad3a6565b846,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33877,6 +33893,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 7851871621093753648, guid: f8bbf260b07b44c938471c6b01ecb2fc,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9075941469756283704, guid: f8bbf260b07b44c938471c6b01ecb2fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34158,6 +34179,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 158424259986323709, guid: 29a33055d81574d97b3219f7dc1e8386,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506002644994349148, guid: 29a33055d81574d97b3219f7dc1e8386,
         type: 3}
       propertyPath: m_Controller
@@ -34626,6 +34652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508397277748931199, guid: a73fd650dda1b45488cea10f1827a33e,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7385288312990684569, guid: a73fd650dda1b45488cea10f1827a33e,
         type: 3}
@@ -36720,6 +36751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646358805875306877, guid: 2208c243c5a6f42ac865f5882cd25db4,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49142,6 +49178,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2158497089209161108, guid: 3f4be1a0f1ee246b0ba3d185e5db04bc,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5460044377944733827, guid: 3f4be1a0f1ee246b0ba3d185e5db04bc,
         type: 3}
       propertyPath: m_Name
@@ -56368,6 +56409,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2879120454422468568, guid: a24b0ac8e8acb4417b3a20f392825a26,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6440674026526349431, guid: a24b0ac8e8acb4417b3a20f392825a26,
         type: 3}
       propertyPath: m_Name

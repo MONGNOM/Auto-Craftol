@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class TitleTouchtoStart : MonoBehaviour
+
+public class TitleTouchtoStart : MonoBehaviour, IPointerClickHandler
 {
     public TextMeshProUGUI text;
+   
     void Start()
     {
         StartCoroutine(TextBlink());
     }
 
-    void Update()
-    {
-        
-    }
-
+   
     IEnumerator TextBlink()
     {
         while (true)
@@ -27,5 +26,12 @@ public class TitleTouchtoStart : MonoBehaviour
             yield return new WaitForSeconds(0.6f);
 
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("11");
+        SceneManager.LoadScene("MapScene");
+        Debug.Log("22");
     }
 }

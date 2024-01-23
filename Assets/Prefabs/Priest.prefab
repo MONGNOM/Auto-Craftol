@@ -356,7 +356,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 0
+  m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
 --- !u!1 &1208246201249333012
 GameObject:

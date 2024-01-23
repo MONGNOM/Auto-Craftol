@@ -9,16 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: cd75b7490ac52469797e5ed6528bcb66
   - enabled: 1
-    path: Assets/Scenes/Tutorial Scene.unity
-    guid: 260804be59f0e4db69cc7419cee8d371
-  - enabled: 1
     path: Assets/Scenes/MapScene.unity
     guid: c07a60d0f3641457d95ea6f7035dfa20
-  - enabled: 1
-    path: Assets/Scenes/GameEndScene.unity
-    guid: d5e52a916e53f44848731e9bea65a3de
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d5c0a40d1d4fb45a09f23e4b8946de8b,
       type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 004a9201297cb4f02a421c8be357fdce, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: ced9ca1687b2d4f96b499b51ba0bd62d, type: 2}
