@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+
+    public delegate void FindHumanCount();
+    public static event FindHumanCount HumanCount;
+
     public static WaveManager instance;
     public Transform spawnPosition;
 
@@ -32,9 +36,9 @@ public class WaveManager : MonoBehaviour
             monsters[i] = mon[i];
         }
     }
-
     public void DeathPlayer()
     {
+
         for (int i = 0; i < humans.Count; i++)
         {   
             humans.Remove(humans[i]);
@@ -56,6 +60,8 @@ public class WaveManager : MonoBehaviour
             Debug.Log("player add");
         }
         random = UnityEngine.Random.Range(0, humans.Count);
+        HumanCount();
+        Debug.Log("find Player");
     }
 
     public void FindUnit()

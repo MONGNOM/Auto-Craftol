@@ -31,6 +31,7 @@ public class Human : UnitBase
 
     private void Start()    
     {
+        WaveManager.instance.FindPlayer();
         monster = FindObjectOfType<Monster>();
         curhp = Maxhp;
         box.enabled = false;

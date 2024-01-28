@@ -21,10 +21,6 @@ public class TimeManager : MonoBehaviour
         breakTime = 10f;
     }
 
-    private void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -109,8 +105,11 @@ public class TimeManager : MonoBehaviour
 
     public void ChoiceSpawnCard()
     {
-        spawncard.gameObject.SetActive(true);
-        choice.gameObject.SetActive(true);
+        if (WaveManager.instance.humans.Count >= 12)
+            return;
+        
+            spawncard.gameObject.SetActive(true);
+            choice.gameObject.SetActive(true);
     }
 
     public void ColorChange()
