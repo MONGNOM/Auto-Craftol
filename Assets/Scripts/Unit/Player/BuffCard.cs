@@ -1,32 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuffCard : MonoBehaviour
 {
    
     [SerializeField] float attackTime;
     [SerializeField] float damageTime;
-   
 
-    
+    public Button buffButton;
+
+    [SerializeField]
+    private int cost;
+
+
 
     public void AttackSpeedUp()
     {
-        StartCoroutine(SpeedUpTime());
+        if (DataManager.instance.Coin == 0)
+            return;
+
+            DataManager.instance.CostUse(cost);
+            StartCoroutine(SpeedUpTime());
     }
 
     public void Heal()
     {
-        for (int i = 0; i < WaveManager.instance.humans.Count; i++)
-        {
-            WaveManager.instance.humans[i].curhp += WaveManager.instance.humans[i].curhp *= 0.5f;
-        }
+        if (DataManager.instance.Coin == 0)
+            return;
+
+            DataManager.instance.CostUse(cost);
+            for (int i = 0; i < WaveManager.instance.humans.Count; i++)
+            {
+                WaveManager.instance.humans[i].curhp += WaveManager.instance.humans[i].curhp *= 0.5f;
+            }
     }
 
     public void DamageUp()
     {
-        StartCoroutine(DamageUpTime());
+        if (DataManager.instance.Coin == 0)
+            return;
+
+            DataManager.instance.CostUse(cost);
+            StartCoroutine(DamageUpTime());
     }
 
     IEnumerator SpeedUpTime()

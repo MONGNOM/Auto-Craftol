@@ -58,7 +58,7 @@ public class Monster : UnitBase
         WaveManager.instance.DestroyUnit();
         TimeManager.instance.ChoiceSpawnCard();
         WaveManager.instance.StartPos();
-
+        DataManager.instance.Coin = 10;
         Destroy(gameObject);
     }
 

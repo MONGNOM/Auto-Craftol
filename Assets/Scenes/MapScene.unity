@@ -279,8 +279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bc49140782c4d828e472501d3f5b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  costText: {fileID: 0}
-  countText: {fileID: 0}
+  coinText: {fileID: 665755092}
+  countText: {fileID: 1711822529}
+  coin: 10
   count: 0
 --- !u!1001 &51294752
 PrefabInstance:
@@ -7631,6 +7632,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b54adcd6128410b9390e33080e7bce, type: 3}
+--- !u!114 &463043256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3788658643415984747, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+    type: 3}
+  m_PrefabInstance: {fileID: 1867739230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466728754
 GameObject:
   m_ObjectHideFlags: 0
@@ -11488,6 +11501,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332845390}
   m_CullTransparentMesh: 1
+--- !u!114 &1372236907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 492052298435556412, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+    type: 3}
+  m_PrefabInstance: {fileID: 1867739230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1395571630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13586,6 +13611,18 @@ Transform:
   - {fileID: 1249458481}
   m_Father: {fileID: 249154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1843595914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5629490179963938826, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+    type: 3}
+  m_PrefabInstance: {fileID: 1867739230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1843643036
 GameObject:
   m_ObjectHideFlags: 0
@@ -14031,11 +14068,41 @@ PrefabInstance:
       propertyPath: m_Padding.m_Right
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7718021604049922878, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: cost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718021604049922878, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: buffButton
+      value: 
+      objectReference: {fileID: 1372236907}
+    - target: {fileID: 8405292618704000378, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: cost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405292618704000378, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: buffButton
+      value: 
+      objectReference: {fileID: 1843595914}
     - target: {fileID: 8877945118196873891, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
         type: 3}
       propertyPath: m_Name
       value: MagicCardBG
       objectReference: {fileID: 0}
+    - target: {fileID: 8892351332652848701, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: cost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892351332652848701, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: buffButton
+      value: 
+      objectReference: {fileID: 463043256}
     - target: {fileID: 9184554703926773324, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
         type: 3}
       propertyPath: m_AnchorMax.y
