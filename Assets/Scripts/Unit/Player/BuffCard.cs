@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,14 +13,23 @@ public class BuffCard : MonoBehaviour
     public Button buffButton;
 
     [SerializeField]
+    private TextMeshProUGUI needCostText;
+
+    [SerializeField]
     private int cost;
 
-
+    private void Start()
+    {
+        needCostText.gameObject.SetActive(false);
+    }
 
     public void AttackSpeedUp()
     {
         if (DataManager.instance.Coin == 0)
+        {
+            StartCoroutine(NeedCostText());
             return;
+        }
 
             DataManager.instance.CostUse(cost);
             StartCoroutine(SpeedUpTime());
@@ -28,9 +38,12 @@ public class BuffCard : MonoBehaviour
     public void Heal()
     {
         if (DataManager.instance.Coin == 0)
+        {
+            StartCoroutine(NeedCostText());
             return;
+        }
 
-            DataManager.instance.CostUse(cost);
+        DataManager.instance.CostUse(cost);
             for (int i = 0; i < WaveManager.instance.humans.Count; i++)
             {
                 WaveManager.instance.humans[i].curhp += WaveManager.instance.humans[i].curhp *= 0.5f;
@@ -40,9 +53,12 @@ public class BuffCard : MonoBehaviour
     public void DamageUp()
     {
         if (DataManager.instance.Coin == 0)
+        {
+            StartCoroutine(NeedCostText());
             return;
+        }
 
-            DataManager.instance.CostUse(cost);
+        DataManager.instance.CostUse(cost);
             StartCoroutine(DamageUpTime());
     }
 
@@ -76,5 +92,13 @@ public class BuffCard : MonoBehaviour
             WaveManager.instance.humans[i].damage *= 0.85f;
         }
         StopCoroutine(DamageUpTime());
+    }
+
+
+    IEnumerator NeedCostText()
+    {
+        needCostText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        needCostText.gameObject.SetActive(false);
     }
 }
