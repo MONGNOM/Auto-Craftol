@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -91,6 +92,7 @@ public class WaveManager : MonoBehaviour
         if (hum == null)
         {
             Time.timeScale = 0;
+            SceneManager.LoadScene("DefeatScene");
         }
     }
 
@@ -117,8 +119,11 @@ public class WaveManager : MonoBehaviour
 
     public void VictoryGame()
     {
-        if(mon == null)
-           Time.timeScale = 0;
+        if (mon == null)
+        {
+            Time.timeScale = 0;
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 
 

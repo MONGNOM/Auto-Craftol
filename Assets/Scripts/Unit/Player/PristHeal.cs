@@ -10,7 +10,7 @@ public class PristHeal : MonoBehaviour
     {
         player = GetComponentInParent<Human>();
     }
-        
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponentInParent<Human>())
@@ -18,7 +18,17 @@ public class PristHeal : MonoBehaviour
             particle = other.GetComponentInChildren<ParticleSystem>();
             Human human = other.GetComponent<Human>();
             particle.Play();
-            human.curhp += player.damage;
-        }           
+
+            if (human.curhp + player.damage > human.Maxhp)
+            {
+                human.curhp = human.Maxhp;
+            }
+            else
+            {
+                Debug.Log("111");
+                human.curhp += player.damage;
+            }
+        }
+
     }
 }

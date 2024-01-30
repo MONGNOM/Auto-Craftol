@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BuffCard : MonoBehaviour
 {
 
-    public ParticleSystem particle;
+    
     [SerializeField] float attackTime;
     [SerializeField] float damageTime;
 
@@ -19,10 +19,7 @@ public class BuffCard : MonoBehaviour
     [SerializeField]
     private int cost;
 
-    private void Start()
-    {
-        needCostText.gameObject.SetActive(false);
-    }
+
 
     public void AttackSpeedUp()
     {
@@ -32,10 +29,12 @@ public class BuffCard : MonoBehaviour
             return;
         }
         DataManager.instance.CostUse(cost);
-        particle = FindObjectOfType<Human>().transform.GetChild(6).GetComponent<ParticleSystem>();
-        if (!particle.isPlaying)
-            particle.Play();
-        StartCoroutine(SpeedUpTime());
+        for (int i = 0; i < WaveManager.instance.humans.Count; i++)
+        {
+            if (!WaveManager.instance.humans[i].transform.GetChild(6).GetComponent<ParticleSystem>().isPlaying)
+                WaveManager.instance.humans[i].transform.GetChild(6).GetComponent<ParticleSystem>().Play();
+        }
+            StartCoroutine(SpeedUpTime());
     }
 
     public void Heal()
@@ -47,11 +46,15 @@ public class BuffCard : MonoBehaviour
         }
 
         DataManager.instance.CostUse(cost);
-        particle = FindObjectOfType<Human>().transform.GetChild(4).GetComponent<ParticleSystem>();
-        particle.Play();
         for (int i = 0; i < WaveManager.instance.humans.Count; i++)
         {
-            WaveManager.instance.humans[i].curhp += WaveManager.instance.humans[i].curhp *= 0.5f;
+            if (WaveManager.instance.humans[i].curhp + WaveManager.instance.humans[i].Maxhp > WaveManager.instance.humans[i].Maxhp)
+                WaveManager.instance.humans[i].curhp = WaveManager.instance.humans[i].Maxhp;
+            else
+            {
+                WaveManager.instance.humans[i].curhp += WaveManager.instance.humans[i].curhp *= 0.5f;
+            }
+                WaveManager.instance.humans[i].transform.GetChild(4).GetComponent<ParticleSystem>().Play();
         }
     }
 
@@ -62,10 +65,11 @@ public class BuffCard : MonoBehaviour
             StartCoroutine(NeedCostText());
             return;
         }
-
         DataManager.instance.CostUse(cost);
-        particle = FindObjectOfType<Human>().transform.GetChild(5).GetComponent<ParticleSystem>();
-        particle.Play();
+         for (int i = 0; i < WaveManager.instance.humans.Count; i++)
+        {
+                WaveManager.instance.humans[i].transform.GetChild(5).GetComponent<ParticleSystem>().Play();
+        }
         StartCoroutine(DamageUpTime());
     }
 
