@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class BuffCard : MonoBehaviour
 {
-   
+
+    public ParticleSystem particle;
     [SerializeField] float attackTime;
     [SerializeField] float damageTime;
 
@@ -30,9 +31,11 @@ public class BuffCard : MonoBehaviour
             StartCoroutine(NeedCostText());
             return;
         }
-
-            DataManager.instance.CostUse(cost);
-            StartCoroutine(SpeedUpTime());
+        DataManager.instance.CostUse(cost);
+        particle = FindObjectOfType<Human>().transform.GetChild(6).GetComponent<ParticleSystem>();
+        if (!particle.isPlaying)
+            particle.Play();
+        StartCoroutine(SpeedUpTime());
     }
 
     public void Heal()
@@ -44,10 +47,12 @@ public class BuffCard : MonoBehaviour
         }
 
         DataManager.instance.CostUse(cost);
-            for (int i = 0; i < WaveManager.instance.humans.Count; i++)
-            {
-                WaveManager.instance.humans[i].curhp += WaveManager.instance.humans[i].curhp *= 0.5f;
-            }
+        particle = FindObjectOfType<Human>().transform.GetChild(4).GetComponent<ParticleSystem>();
+        particle.Play();
+        for (int i = 0; i < WaveManager.instance.humans.Count; i++)
+        {
+            WaveManager.instance.humans[i].curhp += WaveManager.instance.humans[i].curhp *= 0.5f;
+        }
     }
 
     public void DamageUp()
@@ -59,7 +64,9 @@ public class BuffCard : MonoBehaviour
         }
 
         DataManager.instance.CostUse(cost);
-            StartCoroutine(DamageUpTime());
+        particle = FindObjectOfType<Human>().transform.GetChild(5).GetComponent<ParticleSystem>();
+        particle.Play();
+        StartCoroutine(DamageUpTime());
     }
 
     IEnumerator SpeedUpTime()

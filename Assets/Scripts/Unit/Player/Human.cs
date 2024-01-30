@@ -63,7 +63,6 @@ public class Human : UnitBase
         agent.isStopped = true;
         gameObject.SetActive(false);
         WaveManager.instance.FindPlayer();
-        Debug.Log("11");
     }
 
     public override void Move()
@@ -90,8 +89,7 @@ public class Human : UnitBase
         }
         else if (other.CompareTag("MonsterWeapon"))
         {
-            // Umm hp collider cap and Attackcol ?
-             Monster monster = other.gameObject.GetComponentInParent<Monster>();
+            Monster monster = other.gameObject.GetComponentInParent<Monster>();
             curhp -= monster.damage;
         }
         
@@ -110,7 +108,6 @@ public class Human : UnitBase
     {
         box.enabled = true;
         particle.Play();
-        Debug.Log(particle);
     }
 
     public void OffPlayerWeapon()

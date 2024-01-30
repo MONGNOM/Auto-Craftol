@@ -18,7 +18,6 @@ public class PristHeal : MonoBehaviour
             particle = other.GetComponentInChildren<ParticleSystem>();
             Human human = other.GetComponent<Human>();
             particle.Play();
-            Debug.Log(particle);
             human.curhp += player.damage;
         }           
     }

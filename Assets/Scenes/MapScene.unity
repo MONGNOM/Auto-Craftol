@@ -14023,6 +14023,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e7d29a79bc7fae248887c8a08a160303,
         type: 3}
+    - target: {fileID: 492052298435556412, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492052298435556412, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492052298435556412, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 3e9cb797532b341879fb7f23f3e79f72,
+        type: 3}
+    - target: {fileID: 492052298435556412, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492052298435556412, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BuffCard, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1511334539230765602, guid: a2bd4d4ebbbad49918d7fcc911ccdc48,
         type: 3}
       propertyPath: m_Sprite

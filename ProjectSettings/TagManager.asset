@@ -9,6 +9,9 @@ TagManager:
   - PlayerWeapon
   - HealColider
   - Pos
+  - AttackSpeed
+  - DamageUp
+  - Heal
   layers:
   - Default
   - TransparentFX
