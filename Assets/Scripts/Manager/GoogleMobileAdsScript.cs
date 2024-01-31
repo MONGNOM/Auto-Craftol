@@ -4,7 +4,7 @@ using GoogleMobileAds.Api;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoogleMobileAdsDemoScript : MonoBehaviour
+public class GoogleMobileAdsScript : MonoBehaviour
 {
     public void Start()
     {
@@ -13,6 +13,8 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
         {
             // This callback is called once the MobileAds SDK is initialized.
         });
+
+        LoadInterstitialAd();
     }
 
 
@@ -112,7 +114,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
         interstitialAd.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Interstitial ad full screen content closed.");
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
         };
         // Raised when the ad failed to open full screen content.
         interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
