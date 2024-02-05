@@ -89,11 +89,8 @@ public class WaveManager : MonoBehaviour
 
     public void Defeat()
     {
-        if (hum == null)
-        {
             Time.timeScale = 0;
             SceneManager.LoadScene("DefeatScene");
-        }
     }
 
     public void StartPos()

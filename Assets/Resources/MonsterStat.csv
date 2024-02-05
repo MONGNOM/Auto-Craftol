@@ -6,7 +6,8 @@ BossGrunt,5000,60
 Lich,3500,80
 BossLich,4000,90
 PolyGolem,7000,100
-Golem,8000,150
-BossGolem,9000,170
-Skeleton,11000,200
-BossSkeleton,200000,200
+Golem,9000,100
+BossGolem,12000,100
+Skeleton,15000,150
+BossSkeleton,20000,200
+KingSlim,30000,250

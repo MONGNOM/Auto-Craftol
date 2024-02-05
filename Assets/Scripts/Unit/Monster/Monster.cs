@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class Monster : UnitBase
+public class Monster : MonoBehaviour
 {
     public new string name;
     [SerializeField, Range(0, 1000000)] public float maxhp;
@@ -12,10 +12,8 @@ public class Monster : UnitBase
     [Range(0, 1000)]                    public float damage;
     private NavMeshAgent agent;
     private Animator anim;
-    private BoxCollider box;
     public Image hpbar;
     public List<Human> targets = new List<Human>();
-    
 
 
 
@@ -23,7 +21,6 @@ public class Monster : UnitBase
     {
         agent   = GetComponent<NavMeshAgent>();
         anim    = GetComponent<Animator>();
-        box     = GetComponentInChildren<BoxCollider>();
     }
 
     private void Start()
@@ -39,18 +36,7 @@ public class Monster : UnitBase
             Move();
     }
 
-
-    public virtual void DistanceAttack()
-    {
-        anim.SetBool("Attack", true);
-    }
-
-    public override void Attack()       
-    {
-        DistanceAttack();   
-    }
-
-    public override void Death()
+    public  void Death()
     {
         anim.SetBool("Death", true);
         agent.isStopped = true;
@@ -62,15 +48,14 @@ public class Monster : UnitBase
         Destroy(gameObject);
     }
 
-    public override void Move()
+    public  void Move()
     {
         if (WaveManager.instance.humans.Count == 0)
             Idle();
         else
-        {  // find player tag , colider
-           
+        {  
             transform.LookAt(WaveManager.instance.humans[WaveManager.instance.random].transform.position);
-            agent.SetDestination(WaveManager.instance.humans[WaveManager.instance.random].transform.position);
+            agent.destination = Vector3.zero;
             anim.SetBool("Idle", false);
         }
     }
@@ -83,34 +68,13 @@ public class Monster : UnitBase
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Attack();
-        }
-        else if (other.CompareTag("PlayerWeapon"))
+        if (other.CompareTag("PlayerWeapon"))
         {
             Human human = other.gameObject.GetComponentInParent<Human>();
             curhp -= human.damage;
         }
 
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            anim.SetBool("Attack", false);
-            Debug.Log("player가 없다 공격중지");
-        }
-    }
 
-    public void OnWeapon()
-    {
-        box.enabled = true;
-    }
-
-    public void OffWeapon()
-    {
-        box.enabled = false;
-    }
-
+  
 }

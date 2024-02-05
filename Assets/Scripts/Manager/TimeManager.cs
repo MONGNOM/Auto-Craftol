@@ -55,7 +55,8 @@ public class TimeManager : MonoBehaviour
         else
         {
             if (WaveManager.instance.roundMonster != null)
-                Time.timeScale = 0;
+                WaveManager.instance.Defeat();
+                
 
             BreakChangeTime();
             BreakTimeCount();
